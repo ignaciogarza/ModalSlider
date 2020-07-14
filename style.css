@@ -13,6 +13,11 @@
 body {
   font-family: "Lato", sans-serif;
   margin: 0;
+  transition: transform 0.3s ease;
+}
+
+body.show-nav {
+  transform: translateX(200px);
 }
 
 nav {
@@ -119,6 +124,10 @@ input[type="submit"] {
   right: 0;
 }
 
+.modal-container.show-modal {
+  display: block;
+}
+
 .modal {
   background-color: white;
   border-radius: 5px;
@@ -130,6 +139,8 @@ input[type="submit"] {
   transform: translate(-50%, -50%);
   max-width: 100%;
   width: 400px;
+  animation-name: modalopen;
+  animation-duration: var(--modal-duration);
 }
 
 .modal-header {
@@ -167,4 +178,14 @@ input[type="submit"] {
   position: absolute;
   top: 0;
   right: 0;
+}
+
+@keyframes modalopen {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
